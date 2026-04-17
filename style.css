@@ -1,0 +1,146 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Background Specs from Figma */
+.background-wallpaper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('warehouse.png'); /* Ensure file is in same folder */
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    z-index: -2;
+}
+
+.wave-footer {
+    position: absolute;
+    width: 110%;
+    bottom: -20px; /* <--- Changing 0 to -5 pushes it past the edge */
+    left: 30;
+    z-index: -1;
+    display: block; /* Removes any "text-line" spacing */
+}
+
+/* Rectangle 2 Spec */
+.card {
+    width: 520px;
+    background: #FFFFFF;
+    opacity: 90%;
+    border: #000958 3px solid;
+    border-radius: 35px;
+    padding: 130px 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+/* Rectangle 3 & 4 (Inputs) Spec */
+.input-group {
+    width: 100%;
+    height: 60px;
+    background: #D9D9D9;
+    border-radius: 17px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding:  20px;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    color: #2B1172;
+    padding-left: 20px;
+    width: 100%;
+}
+
+/* Rectangle 5 (Button) Spec */
+.btn-signin {
+    width: 234px;
+    height: 69px;
+    background: #000958;
+    border-radius: 17px;
+    color: #FFFFFF;
+    font-size: 36px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.logo {
+    width: 170px;
+    height: auto;
+    display: block;
+    margin: -60px auto 5px auto; /* Changed bottom from 20px to 5px */
+}
+
+.trust-title {
+    font-family: 'Jersey 25';
+    font-size: 35px;
+    color: #000958;
+    margin-top: 0;       /* ADD THIS: Removes any hidden top space */
+    margin-bottom: 70px;
+    font-weight: 400;
+    line-height: 1;      /* ADD THIS: Shrinks the "box" around the text */
+}
+.welcome-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    color: #000958;
+    margin-top: -40px;       /* ADD THIS: Removes any hidden top space */
+    margin-bottom: 30px;
+    font-weight: 600;
+    line-height: 1.5;    /* ADD THIS: Adjusts spacing between lines */
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    color: #000958;
+}
+.username-icon {
+    margin-top: 10px;
+    color: #000958;
+}
+.input-group input::placeholder {
+    font-size: px;
+    color: #000958;
+    font-weight: 400;
+    opacity: 70%;
+     /* Ensures placeholder text is fully visible */
+}.input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    
+    /* CONTROL SIZE HERE */
+    font-size: 17px;         /* Adjust this number to match Figma */
+    font-family: 'Inter', sans-serif;
+    color: #000958;         /* The color of the text while typing */
+    
+    width: 100%;
+}
+ 
+.copyright-text {
+    font-size: 12px;
+    color: #8E8E8E;
+    margin-top: 60px; /* <--- Increase this number until it looks right */
+    font-family: 'Inter', sans-serif;
+}

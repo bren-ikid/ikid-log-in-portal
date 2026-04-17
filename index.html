@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iKiD Trust Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Jersey+25&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-wallpaper"></div>
+    <img src="Wave.png" class="wave-footer">
+
+    <div class="card">
+        <img src="logo.png" class="logo" alt="iKiD Logo">
+        <h1 class="trust-title">Trust Portal</h1>
+        <h1 class="welcome-text">Welcome Back!</h1>
+
+        <form id="loginForm" onsubmit="event.preventDefault(); handleLogin();">
+            <div class="input-group">
+                <img src="icon.png" alt="Username Icon" class="icon">
+                <input type="text" id="username" placeholder="Username" autofocus>
+            </div>
+            <div class="input-group">
+                <img src="settings.png" class="icon" alt="Password Icon">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+
+            <button type="submit" class="btn-signin">SIGN IN</button>
+            
+            <p id="error-message" style="color: #ff4d4d; font-size: 12px; margin-top: 15px; font-family: 'Inter', sans-serif; text-align: center; min-height: 15px;"></p>
+
+            <p class="copyright-text">&copy; 2026 CloudcommerceOps (iKiD). All Rights Reserved.</p>
+        </form>
+    </div>
+
+    <script>
+    function handleLogin() {
+        // Grab the elements
+        const userField = document.getElementById('username');
+        const passField = document.getElementById('password');
+        const errorBox = document.getElementById('error-message');
+        
+        // Extract values
+        const user = userField.value.trim();
+        const pass = passField.value;
+
+        // Client Routing Dictionary
+        const clients = {
+            "theman@ikid.com": {
+                pass: "man2026",
+                link: "https://datastudio.google.com/u/0/reporting/1dc6ce7a-3c96-4b9f-b47b-a4c8bc296f93/page/VNlUF/edit"
+            },
+            "kasya@ikid.com": {
+                pass: "kasya2026",
+                link: "https://datastudio.google.com/reporting/d75f059e-8fd3-4ff1-85b9-f7bb59e9a6fc/page/VNlUF/edit"
+            },
+            "brenikid@ikid.com": {
+                pass: "adminbren2026",
+                link: "https://datastudio.google.com/reporting/6040053e-7a64-4ef0-b887-18e61a7cc4af/page/VNlUF/edit"
+            }
+        };
+
+        // Check credentials
+        if (clients[user] && clients[user].pass === pass) {
+            // Success! Clear error and redirect
+            errorBox.innerText = "";
+            window.location.href = clients[user].link;
+        } else {
+            // Failure! Show error
+            errorBox.innerText = "Access Denied: Invalid credentials.";
+            
+            // Subtle UI touch: Clear password field on fail
+            passField.value = "";
+        }
+    }
+    </script>
+</body>
+</html>
